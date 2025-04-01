@@ -1,0 +1,522 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&display=swap');
+
+:root {
+  --primary-color: #000000;
+  --secondary-color: #ffffff;
+  --accent-color: #333333;
+  --text-color: #1a1a1a;
+  --background-color: #ffffff;
+  --card-background: #f8f8f8;
+  --border-color: #e0e0e0;
+  --golden-ratio: 1.618;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'IBM Plex Mono', monospace;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.container {
+  width: calc(100vw / var(--golden-ratio));
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2.5rem;
+  line-height: 1.3;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* Estilos para las experiencias */
+.experience-section {
+  padding-top: 2rem;
+  opacity: 1;
+}
+
+.experiences-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+  position: relative;
+  margin-top: 2rem;
+}
+
+.experience-card {
+  background-color: var(--card-background);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+  width: 100%;
+  position: relative;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.experience-card.entering {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.experience-card.entered {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.experience-card.exiting {
+  transform: translateY(-100px) scale(0.95);
+  opacity: 0;
+}
+
+.experience-card.exited {
+  transform: translateY(100px) scale(0.95);
+  opacity: 0;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.company-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.company-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.company-name {
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  margin: 0;
+}
+
+.position-title {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin: 0.2rem 0 0 0;
+}
+
+.experience-dates {
+  color: var(--accent-color);
+  font-size: 0.9rem;
+}
+
+.description {
+  margin-bottom: 2rem;
+}
+
+.project {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.project:last-child {
+  margin-bottom: 0;
+}
+
+.project h4 {
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.project p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.technologies {
+  margin-bottom: 2rem;
+}
+
+.technologies h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--background-color);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  position: relative;
+}
+
+.tech-item img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.tech-item .tech-aclaracion {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--card-background);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  color: var(--accent-color);
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 4px;
+  z-index: 1;
+}
+
+.tech-item:hover .tech-aclaracion {
+  display: block;
+}
+
+.responsibilities h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.responsibilities ul {
+  list-style-type: none;
+  padding-left: 1rem;
+}
+
+.responsibilities li {
+  position: relative;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+.responsibilities li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .experience-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .company-info {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .company-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .experience-dates {
+    font-size: 0.8rem;
+  }
+
+  .tech-stack {
+    gap: 0.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Estilos para el header */
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+.header-image {
+  flex-shrink: 0;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  flex: 1;
+}
+
+.header-content h1 {
+  margin-bottom: 1rem;
+}
+
+.header-content h2 {
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.header-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.experience-section .container {
+  padding-top: 2rem; /* Añadir más espacio después del título */
+}
+
+.typewriter-text {
+  display: inline-block;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.typewriter-text span {
+  display: inline-block;
+  margin-right: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .typewriter-text {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+  }
+}
+
+.animated-logo {
+  width: 40px;
+  height: 40px;
+  transform: scale(0.08);
+  transform-origin: center;
+  display: block;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-title h1 {
+  margin: 0;
+}
+
+.technologies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.technology-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+}
+
+.technology-item img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.technology-name {
+  font-size: 12px;
+  color: var(--text-color);
+  text-align: center;
+  position: relative;
+}
+
+.technology-aclaracion {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--card-background);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  color: var(--accent-color);
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 4px;
+  z-index: 1;
+}
+
+.technology-item:hover .technology-aclaracion {
+  display: block;
+}
+
+/* Sección de Tecnologías */
+.technologies-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background: var(--card-background);
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.technologies-chart {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.technologies-container .section-title {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  margin: 0;
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  text-shadow: none;
+  text-align: center;
+}
+
+.technologies-chart text {
+  font-family: var(--font-family);
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.technologies-chart line {
+  pointer-events: none;
+}
+
+.technologies-chart g {
+  cursor: pointer;
+}
+
+.technologies-chart image {
+  transition: transform 0.3s ease;
+}
+
+.technologies-chart image:hover {
+  transform: scale(1.1);
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+  z-index: 1000;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--border-color);
+  border-top-color: var(--accent-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

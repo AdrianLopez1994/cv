@@ -1,0 +1,49 @@
+{
+  "technologies": [
+    {
+      "name": "JavaScript",
+      "icon": "/images/technologies/js.png",
+      "years": 1
+    },
+    {
+      "name": "CSS",
+      "icon": "/images/technologies/css.jpeg",
+      "years": 1
+    },
+    {
+      "name": "HTML",
+      "icon": "/images/technologies/html.png",
+      "years": 1
+    },
+    {
+      "name": "JQuery",
+      "icon": "/images/technologies/jquery.png",
+      "years": 8
+    },
+    {
+      "name": "AJAX",
+      "icon": "/images/technologies/ajax.png",
+      "years": 1
+    },
+    {
+      "name": "PostgreSQL",
+      "icon": "/images/technologies/postgresql.png",
+      "years": 1
+    },
+    {
+      "name": "Java",
+      "icon": "/images/technologies/java.png",
+      "years": 1
+    },
+    {
+      "name": "JavaFX",
+      "icon": "/images/technologies/javafx.png",
+      "years": 1
+    },
+    {
+      "name": "PHP",
+      "icon": "/images/technologies/php.jpeg",
+      "years": 1
+    }
+  ]
+} 

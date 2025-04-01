@@ -1,0 +1,233 @@
+{
+  "experiences": [
+    {
+      "id": 1,
+      "company": "Caixabank Tech",
+      "position": "Desarrollador Full Stack",
+      "dates": "2023 - Presente",
+      "description": [
+        {
+          "name": "Sistema de Gestión de Clientes",
+          "description": "Desarrollo de una aplicación web para la gestión integral de clientes, incluyendo seguimiento de proyectos, facturación y comunicación."
+        },
+        {
+          "name": "Panel de Administración",
+          "description": "Implementación de un panel de administración con estadísticas en tiempo real y gestión de usuarios."
+        }
+      ],
+      "technologies": [
+        {
+          "name": "Node.js",
+          "image": "/images/technologies/nodejs.png"
+        },
+        {
+          "name": "React",
+          "image": "/images/technologies/react.png",
+          "aclaracion": "Principalmente con TypeScript"
+        },
+        {
+          "name": "MongoDB",
+          "image": "/images/technologies/mongodb.png"
+        }
+      ],
+      "responsibilities": [
+        "Desarrollo de nuevas funcionalidades y mantenimiento de aplicaciones existentes",
+        "Optimización de rendimiento y escalabilidad",
+        "Implementación de nuevas tecnologías y mejores prácticas",
+        "Colaboración en el diseño de arquitectura de software"
+      ],
+      "companyLogo": "/images/companies/cabktech.jpeg"
+    },
+    {
+      "id": 2,
+      "company": "OpenBank",
+      "position": "Desarrollador Frontend Senior",
+      "dates": "2021 - 2023",
+      "description": [
+        {
+          "name": "Plataforma E-commerce",
+          "description": "Desarrollo de una plataforma de comercio electrónico con integración de pagos y gestión de inventario."
+        },
+        {
+          "name": "Sistema de Análisis de Datos",
+          "description": "Implementación de un dashboard interactivo para visualización de datos de ventas y métricas de negocio."
+        }
+      ],
+      "technologies": [
+        {
+          "name": "Vue.js",
+          "image": "/images/technologies/vuejs.png"
+        },
+        {
+          "name": "TypeScript",
+          "image": "/images/technologies/typescript.png"
+        },
+        {
+          "name": "D3.js",
+          "image": "/images/technologies/d3js.png"
+        }
+      ],
+      "responsibilities": [
+        "Liderazgo en el desarrollo frontend",
+        "Implementación de arquitecturas escalables",
+        "Optimización de rendimiento",
+        "Mentoría a desarrolladores junior"
+      ],
+      "companyLogo": "/images/companies/openbank.jpeg"
+    },
+    {
+      "id": 3,
+      "startDate": "2020-03",
+      "endDate": "2021-08",
+      "company": "Minsait",
+      "companyLogo": "/images/companies/minsait.jpeg",
+      "position": "Desarrollador Backend Senior",
+      "description": "Descripción general del puesto y los objetivos principales",
+      "technologies": [
+        {
+          "name": "Node.js",
+          "imageUrl": "/images/technologies/nodejs.png"
+        },
+        {
+          "name": "PostgreSQL",
+          "imageUrl": "/images/technologies/postgresql.png"
+        }
+      ],
+      "responsibilities": [
+        "Desarrollo y mantenimiento de APIs RESTful",
+        "Diseño e implementación de arquitecturas escalables",
+        "Optimización de rendimiento de bases de datos",
+        "Mentoría de desarrolladores junior"
+      ]
+    },
+    {
+      "id": 4,
+      "startDate": "2018-05",
+      "endDate": "2020-03",
+      "company": "VASS",
+      "companyLogo": "/images/companies/vass.jpeg",
+      "position": "Desarrollador Backend",
+      "description": "Descripción general del puesto y los objetivos principales",
+      "technologies": [
+        {
+          "name": "Node.js",
+          "imageUrl": "/images/technologies/nodejs.png"
+        },
+        {
+          "name": "PostgreSQL",
+          "imageUrl": "/images/technologies/postgresql.png"
+        }
+      ],
+      "responsibilities": [
+        "Desarrollo y mantenimiento de APIs RESTful",
+        "Diseño e implementación de arquitecturas escalables",
+        "Optimización de rendimiento de bases de datos",
+        "Mentoría de desarrolladores junior"
+      ]
+    },
+    {
+      "id": 5,
+      "startDate": "2018-02",
+      "endDate": "2018-05",
+      "company": "Clever Global",
+      "companyLogo": "/images/companies/clever_global.jpeg",
+      "position": "Desarrollador Backend",
+      "description": "Descripción general del puesto y los objetivos principales",
+      "technologies": [
+        {
+          "name": "Node.js",
+          "imageUrl": "/images/technologies/nodejs.png"
+        },
+        {
+          "name": "PostgreSQL",
+          "imageUrl": "/images/technologies/postgresql.png"
+        }
+      ],
+      "responsibilities": [
+        "Desarrollo y mantenimiento de APIs RESTful",
+        "Diseño e implementación de arquitecturas escalables",
+        "Optimización de rendimiento de bases de datos",
+        "Mentoría de desarrolladores junior"
+      ]
+    },
+    {
+      "id": 6,
+      "startDate": "2014-10",
+      "endDate": "2018-02",
+      "company": "IR - LISSIT (UV)",
+      "companyLogo": "/images/companies/irtic.jpeg",
+      "position": "Desarrollador Backend",
+      "description": [
+        {
+          "name": "Sistema de Votación para la Renovación del Claustro de la Universidad de València",
+          "description": "Participé en el diseño y desarrollo de una solución para gestionar el proceso de votaciones para la renovación del claustro universitario, que incluía la implementación de una base de datos, una aplicación web y una aplicación de gestión de escritorio"
+        },
+        {
+          "name": "Aplicación de Gestión para Prácticas de Traducción e Interpretación (Universidad Complutense y Rey Juan Carlos)",
+          "description": "Participé en el desarrollo y puesta en producción de una aplicación de escritorio utilizada en las universidades Complutense y Rey Juan Carlos para la realización de prácticas de interpretación y traducción"
+        },
+        {
+          "name": "Desarrollo de Herramienta Web para la Administración de Aulas",
+          "description": "En mi transición a un rol más orientado al desarrollo web, he trabajado en varios proyectos de desarrollo de aplicaciones web, evolucionando hacia un perfil Full Stack. Mis responsabilidades han abarcado tanto el desarrollo de nuevas funcionalidades como el mantenimiento y mejora de aplicaciones existentes."
+        },
+        {
+          "name": "Aplicación Médica para Hospitales (Finalidad Estadística)",
+          "description": "Actualmente, formo parte del equipo de desarrollo de una aplicación médica utilizada en hospitales, con el objetivo de procesar datos estadísticos. Mi rol se centra en la creación de nuevas funcionalidades, mantenimiento de la aplicación y la optimización de procesos de carga de datos."
+        }
+      ],
+      "technologies": [
+        {
+          "name": "Java",
+          "imageUrl": "/images/technologies/java.png",
+          "aclaracion": "Principalmente con Java SE 1.8"
+        },
+        {
+          "name": "JavaFX",
+          "imageUrl": "/images/technologies/javafx.png"
+        },
+      
+        {
+          "name": "PostgreSQL",
+          "imageUrl": "/images/technologies/postgresql.png"
+        },
+        {
+          "name": "PHP",
+          "imageUrl": "/images/technologies/php.jpeg"
+        },
+        {
+          "name": "SQL",
+          "imageUrl": "/images/technologies/sql.png"
+        },
+        {
+          "name": "HTML",
+          "imageUrl": "/images/technologies/html.png"
+        },
+        
+        {
+          "name": "CSS",
+          "imageUrl": "/images/technologies/css.jpeg"
+        },
+        {
+          "name": "JavaScript",
+          "imageUrl": "/images/technologies/js.png"
+        },
+        {
+          "name": "JQuery",
+          "imageUrl": "/images/technologies/jquery.png"
+        },
+        {
+          "name": "AJAX",
+          "imageUrl": "/images/technologies/ajax.png"
+        }
+      ],
+      "responsibilities": [
+        "Diseño y desarrollo de aplicaciones tanto en el front-end como en el back-end, utilizando tecnologías como PHP, JavaScript, SQL, y frameworks como Yii",
+        "Diseño e implementación de bases de datos, optimización de consultas SQL y desarrollo de procedimientos almacenados",
+        "Creación de aplicaciones tanto de escritorio (Java SE y JavaFX) como aplicaciones web interactivas (HTML, CSS, JavaScript)",
+        "Implementación de técnicas de programación para manejar tareas concurrentes y asegurar el acceso eficiente a los recursos",
+        "Análisis de la arquitectura de software existente, propuesta de mejoras y optimización tanto en el código como en la base de datos",
+        "Mantenerme al día con nuevas tecnologías para mejorar mis habilidades y aportar soluciones innovadoras a los proyectos"
+      ]
+    }
+  ]
+} 
