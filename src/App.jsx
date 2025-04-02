@@ -44,12 +44,10 @@ function App() {
       </Section>
 
       <Section className="education-section" title="Educación">
-        <h2>Educación</h2>
         {/* Aquí irá tu educación */}
       </Section>
 
       <Section className="contact-section" title="Contacto">
-        <h2>Contacto</h2>
         {/* Aquí irá tu información de contacto */}
       </Section>
     </main>

@@ -10,6 +10,8 @@ const TechnologiesSection = ({ experiences, technologies }) => {
   const [hoveredTech, setHoveredTech] = useState(null);
   const simulationRef = useRef(null);
   const yearLabelsRef = useRef(null);
+  const nodesRef = useRef(null);
+  const linksRef = useRef(null);
 
   useEffect(() => {
     if (!isInView || !svgRef.current || !experiences || !technologies) return;
@@ -19,53 +21,59 @@ const TechnologiesSection = ({ experiences, technologies }) => {
 
     const width = svgRef.current.clientWidth;
     const height = svgRef.current.clientHeight;
-    const margin = { top: 0, right: 0, bottom: 0, left: 0 };
+    const centerX = width / 2;
+    const centerY = height / 3;
+    const radius = Math.min(width, height) * 0.2;
 
     // Crear el SVG
     const svg = d3.select(svgRef.current)
       .attr("width", width)
       .attr("height", height);
+      //.style("background-color", "var(--background-color)");
 
-    // Crear los nodos (tecnologías)
-    const nodes = technologies.map(tech => ({
-      id: tech.name,
-      years: tech.years,
-      icon: tech.icon,
-      aclaracion: tech.aclaracion
+    // Crear el nodo central
+    const centralNode = {
+      id: "central",
+      name: "Tecnologías",
+      x: centerX,
+      y: centerY,
+      fixed: true
+    };
+
+    // Crear los nodos de tecnologías
+    const nodes = [
+      centralNode,
+      ...technologies.map((tech, i) => ({
+        id: tech.name,
+        name: tech.name,
+        years: tech.years,
+        image: tech.image,
+        aclaracion: tech.aclaracion,
+        angle: (i / technologies.length) * 2 * Math.PI,
+        x: centerX + radius * Math.cos((i / technologies.length) * 2 * Math.PI),
+        y: centerY + radius * Math.sin((i / technologies.length) * 2 * Math.PI)
+      }))
+    ];
+
+    // Crear enlaces desde el nodo central a cada tecnología
+    const links = technologies.map(tech => ({
+      source: "central",
+      target: tech.name,
+      value: 1
     }));
-
-    // Crear enlaces entre tecnologías que aparecen juntas en las mismas experiencias
-    const links = [];
-    experiences.forEach(exp => {
-      exp.technologies.forEach((tech1, i) => {
-        exp.technologies.slice(i + 1).forEach(tech2 => {
-          // Verificar que ambas tecnologías existan en el array de nodos
-          const sourceNode = nodes.find(n => n.id === tech1.name);
-          const targetNode = nodes.find(n => n.id === tech2.name);
-          
-          if (sourceNode && targetNode) {
-            links.push({
-              source: sourceNode.id,
-              target: targetNode.id,
-              value: 1
-            });
-          }
-        });
-      });
-    });
 
     // Crear la simulación de fuerza
     const simulation = d3.forceSimulation(nodes)
-      .force("link", d3.forceLink(links).id(d => d.id).distance(100))
-      .force("charge", d3.forceManyBody().strength(-200))
-      .force("center", d3.forceCenter(width / 2, height / 4))
-      .force("collision", d3.forceCollide().radius(d => 60 + (d.years * 5)))
-      .force("y", d3.forceY(height / 3).strength(0.1));
+      .force("link", d3.forceLink(links).id(d => d.id).distance(d => d.id === "central" ? 0 : radius))
+      .force("charge", d3.forceManyBody().strength(d => d.id === "central" ? 0 : -200))
+      .force("collision", d3.forceCollide().radius(d => d.id === "central" ? 0 : 60 + (d.years * 5)))
+      .force("x", d3.forceX(centerX).strength(d => d.id === "central" ? 1 : 0.1))
+      .force("y", d3.forceY(centerY).strength(d => d.id === "central" ? 1 : 0.1));
 
     simulationRef.current = simulation;
 
     // Crear los enlaces
-    const link = svg.append("g")
+    linksRef.current = svg.append("g")
       .selectAll("line")
       .data(links)
       .enter()
@@ -75,7 +83,7 @@ const TechnologiesSection = ({ experiences, technologies }) => {
       .attr("opacity", 0.3);
 
     // Crear los nodos
-    const node = svg.append("g")
+    nodesRef.current = svg.append("g")
       .selectAll("g")
       .data(nodes)
       .enter()
@@ -85,23 +93,47 @@ const TechnologiesSection = ({ experiences, technologies }) => {
         .on("drag", dragged)
         .on("end", dragended))
       .on("mouseenter", (event, d) => {
-        setHoveredTech(d);
+        if (d.id !== "central") {
+          setHoveredTech(d);
+        }
       })
       .on("mouseleave", () => {
         setHoveredTech(null);
       });
 
+    // Añadir el círculo central
+    nodesRef.current.filter(d => d.id === "central")
+      .append("circle")
+      .attr("r", 40)
+      .attr("fill", "var(--accent-color)")
+      .attr("opacity", 0.2);
+
+    // Añadir el texto "Tecnologías" en el nodo central
+    nodesRef.current.filter(d => d.id === "central")
+      .append("text")
+      .attr("text-anchor", "middle")
+      .attr("dy", "0.35em")
+      .attr("fill", "var(--accent-color)")
+      .attr("font-size", "16px")
+      .text("Tecnologías");
+
     // Añadir las imágenes de las tecnologías
-    node.append("image")
-      .attr("xlink:href", d => d.icon)
+    nodesRef.current.filter(d => d.id !== "central")
+      .append("image")
+      .attr("xlink:href", d => d.image)
       .attr("width", d => 78 + (d.years * 5))
       .attr("height", d => 78 + (d.years * 5))
       .attr("x", d => -(39 + (d.years * 2.5)))
       .attr("y", d => -(39 + (d.years * 2.5)))
-      .attr("opacity", 0.9);
+      .attr("opacity", 0.9)
+      .on("error", function() {
+        console.error("Error al cargar la imagen:", d3.select(this).attr("xlink:href"));
+        d3.select(this).attr("opacity", 0);
+      });
 
     // Añadir el texto de años de experiencia y aclaración (inicialmente oculto)
-    yearLabelsRef.current = node.append("text")
+    yearLabelsRef.current = nodesRef.current.filter(d => d.id !== "central")
+      .append("text")
       .attr("dy", d => -50)
       .attr("text-anchor", "middle")
       .attr("fill", "var(--accent-color)")
@@ -117,17 +149,21 @@ const TechnologiesSection = ({ experiences, technologies }) => {
 
     // Actualizar la posición de los elementos en cada tick
     simulation.on("tick", () => {
-      link
-        .attr("x1", d => d.source.x)
-        .attr("y1", d => d.source.y)
-        .attr("x2", d => d.target.x)
-        .attr("y2", d => d.target.y);
+      if (linksRef.current) {
+        linksRef.current
+          .attr("x1", d => d.source.x)
+          .attr("y1", d => d.source.y)
+          .attr("x2", d => d.target.x)
+          .attr("y2", d => d.target.y);
+      }
 
-      node
-        .attr("transform", d => `translate(${d.x},${d.y})`);
+      if (nodesRef.current) {
+        nodesRef.current
+          .attr("transform", d => `translate(${d.x},${d.y})`);
+      }
     });
 
-    // Funciones de drag
+    // Funciones de drag optimizadas
     function dragstarted(event) {
       if (!event.active) simulation.alphaTarget(0.3).restart();
       event.subject.fx = event.subject.x;
@@ -137,6 +173,18 @@ const TechnologiesSection = ({ experiences, technologies }) => {
     function dragged(event) {
       event.subject.fx = event.x;
       event.subject.fy = event.y;
+      // Actualizar solo las posiciones sin recalcular todo el grafo
+      if (linksRef.current) {
+        linksRef.current
+          .attr("x1", d => d.source.x)
+          .attr("y1", d => d.source.y)
+          .attr("x2", d => d.target.x)
+          .attr("y2", d => d.target.y);
+      }
+      if (nodesRef.current) {
+        nodesRef.current
+          .attr("transform", d => `translate(${d.x},${d.y})`);
+      }
     }
 
     function dragended(event) {
@@ -166,9 +214,9 @@ const TechnologiesSection = ({ experiences, technologies }) => {
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-
+      <div className="technologies-container">
         <svg ref={svgRef} className="technologies-chart"></svg>
-
+      </div>
     </motion.section>
   );
 };

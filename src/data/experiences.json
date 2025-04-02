@@ -4,7 +4,8 @@
       "id": 1,
       "company": "Caixabank Tech",
       "position": "Desarrollador Full Stack",
-      "dates": "2023 - Presente",
+      "startDate": "2024-12",
+      "endDate": "Presente",
       "description": [
         {
           "name": "Sistema de Gestión de Clientes",
@@ -42,36 +43,104 @@
       "id": 2,
       "company": "OpenBank",
       "position": "Desarrollador Frontend Senior",
-      "dates": "2021 - 2023",
+      "startDate": "2021-08",
+      "endDate": "2024-12",
       "description": [
         {
-          "name": "Plataforma E-commerce",
-          "description": "Desarrollo de una plataforma de comercio electrónico con integración de pagos y gestión de inventario."
+          "name": "Gestor documental (online)",
+          "description": "Durante el petiodo que he estado en OpenBank he participado en el desarrollo y mantenimiento del conjunto de microservicios encargados de dar soporte a toda la funcionalidad relativa al producto del gestor documental. Para ello he estado haciendo desarrollos utilizando Java, Spring Boot y API REST, bases de datos no relacionales como MongoDB, Redis y OpenSearch. He estado desarrollando componentes en Python. El entorno donde se ejecutan estos desarrollos es un entorno completamente Cloud (en este caso AWS) en el que el rendimiento es un tema a tener en cuenta ya que las peticiones que reciben los servicios pueden no contener solo datos en formato JSON sino además pueden ser ficheros de gran tamaño. He trabajado con arquitecturas asíncronas basadas en eventos y sistemas de almacenamiento en la nube también."
         },
         {
-          "name": "Sistema de Análisis de Datos",
-          "description": "Implementación de un dashboard interactivo para visualización de datos de ventas y métricas de negocio."
+          "name": "Gestor documental (batch)",
+          "description": "Dentro del mismo departamento, también estuve realizando el diseño, desarrollo y mantenimiento de los elementos necesarios para las actividades que recaen dentro del gestor documental pero no necesitan realizarse bajo demanda (es decir, que no son interactivas). Dichas actividades hacían uso de procesos reactivos (utilizando SQSs y SNSs) que debían ejecutarse en determinadas ventanas temporales. Para ello en este ámbito estuve realizando desarrollos en Java, con Spring Boot y JMS, bases de datos no relacionales, sistemas de almacenamiento externos basados en la nube (en este caso S3 de AWS) e interacción con herramientas de terceros. En este caso el punto más relevante a destacar fue el trabajo de optimización que se realizó sobre el código ya existente, rediseñando parte de la solucicón para llegar a aumentar el rendimiento considerablemente utilizando soluciones de multithreading y entornos de alta concurrencia."
+        },
+        {
+          "name": "Gestor documental (migraciones)",
+          "description": "El tercer tipo de proyecto en el que estuve trabando fueron proyectos relacionados con las migraciones de datos. En este tipo de proyectos el punto a resaltar es el gran volumen de datos y ficheros pesados con los que el sistema tenía que tratar. Para este punto estuve trabajando con sistemas basados en Java, Spring Boot, sistemas de almacenamiento e integraciones con otros productos internos del banco. En este punto es interesante destacar la importancia ya no solo de la gran olumetría de datos a tratar sino de la importáncia de elaborar un sistema inerente al proceso de migración que hiciese posible verificar el proceso realizado."
         }
       ],
       "technologies": [
         {
-          "name": "Vue.js",
-          "image": "/images/technologies/vuejs.png"
+          "name": "Spring Boot",
+          "image": "/images/technologies/springboot.png"
         },
         {
-          "name": "TypeScript",
-          "image": "/images/technologies/typescript.png"
+          "name": "Java",
+          "image": "/images/technologies/java.png",
+          "aclaracion": "Principalmente con Java 11, 17 y 21"
         },
         {
-          "name": "D3.js",
-          "image": "/images/technologies/d3js.png"
+          "name": "Python",
+          "image": "/images/technologies/python.png"
+        },
+        {
+          "name": "Git",
+          "image": "/images/technologies/git.png"
+        },
+        {
+          "name": "AWS",
+          "image": "/images/technologies/aws.webp"
+        },
+        {
+          "name": "MongoDB",
+          "image": "/images/technologies/mongodb.png"
+        },
+        {
+          "name": "Redis",
+          "image": "/images/technologies/redis.png"
+        },
+        {
+          "name": "OpenSearch",
+          "image": "/images/technologies/opensearch.png"
+        },
+        {
+          "name": "JUnit",
+          "image": "/images/technologies/junit.png"
+        },
+        {
+          "name": "PostgreSQL",
+          "image": "/images/technologies/postgresql.png"
+        },
+        {
+          "name": "Docker",
+          "image": "/images/technologies/docker.png"
+        },
+        {
+          "name": "Multithreading",
+          "image": "/images/technologies/threads.webp"
+        },
+        {
+          "name": "SQS",
+          "image": "/images/technologies/sqs.png"
+        },
+        {
+          "name": "SOAP",
+          "image": "/images/technologies/soap.webp"
+        },
+        {
+          "name": "REST",
+          "image": "/images/technologies/rest.png"
+        },
+        {
+          "name": "Swagger",
+          "image": "/images/technologies/swagger.png"
+        },
+        {
+          "name": "Maven",
+          "image": "/images/technologies/mvn.png"
         }
+        
+        
       ],
       "responsibilities": [
-        "Liderazgo en el desarrollo frontend",
-        "Implementación de arquitecturas escalables",
-        "Optimización de rendimiento",
-        "Mentoría a desarrolladores junior"
+        "Desarrollo y mantenimiento de microservicios para la gestión documental utilizando Java, Spring Boot y API REST",
+        "Trabajo con bases de datos NoSQL como MongoDB, Redis y OpenSearch",
+        "Implementación de soluciones en Python para complementar el ecosistema de microservicios",
+        "Optimización de rendimiento en entornos Cloud (AWS), manejando grandes volúmenes de datos y archivos",
+        "Diseño y desarrollo de procesos batch, aplicando arquitecturas asíncronas basadas en eventos con SQS y SNS mediante JMS",
+        "Uso de sistemas de almacenamiento en la nube (AWS S3) y su integración con otras herramientas del banco",
+        "Optimización de código y mejora de rendimiento mediante multithreading y entornos de alta concurrencia",
+        "Migración de grandes volúmenes de datos y archivos, garantizando la verificación y validación de los procesos"
       ],
       "companyLogo": "/images/companies/openbank.jpeg"
     },
@@ -82,22 +151,80 @@
       "company": "Minsait",
       "companyLogo": "/images/companies/minsait.jpeg",
       "position": "Desarrollador Backend Senior",
-      "description": "Descripción general del puesto y los objetivos principales",
+      "description": [
+        {
+          "name": "Sistema inegrado de voto electrónico",
+          "description": "Durante este periodo participé en el desarrollo de un dispositivo de voto electrónico. El dispositivo se desarrollaba desde 0, diseño exterior, compoenntes interiores, sensores... Sobre dicho sistema se desarrollaba una aplicación web que hacía de interfaz para que el usuario pudiese utilizarla. La aplicación web se exponía/consumía mediante API REST. El front estaba implementado usando Vue.js, el back con Spring Boot, JPA, Spring State Machine, Aspect Oriented Programming y Java 11 y se hacía uso de una base de datos embebida de tipo relacional, una PostgreSQL. También implementé una forma de comunicación entre dispositivos utilizando Kafka.En este proyecto tuve que realizar modificaciones y desarrollos en todas las capas del stack, desde la integración de los sensores con el sistema operativo, base de datos, backend y front. "
+        },
+        {
+          "name": "Sistema integrado de identificación biométrica",
+          "description": "Después de trabajar en la máquina de voto electrónico participé en un proyecto similar pero centrado en la identificación biométrica. El stack tecnológico y arquitectura general eran los mismos a los que ya existían en el dispositivo de voto, pero puesto que el fin era diferente, se hicieron modificaciones en el back para soportar la nueva funcionalidad y mejorar el rendimiento en base a las especificaciones técnicas de los componentes de los que se componía el dispositivo. Estuve desarrollando una forma de 'emular' el entorno del dispositivo mediante virtualización utilizando Docker."
+        },
+        {
+          "name": "Sistema de votación web",
+          "description": "En el periodo final de mi paso por Minsait, participé en un proyecto que tenía como objetivo llevar a cabo unas pruebas de verificación y validación para la realización de un proceso electoral mediante una plataforma web en Mexico. Cuando entré el proyecto estaba ya desarrollado pero eran necesaras algunas modificaciones para poder mejorar el rendimiento y la eficacia del mismo. El proyecto se ejecutaba en un entorno Cloud, concretamente en AWS. Este proyecto además de ser interesante por la complejidad técnica y la criticidad, fue un primer acercamiento al paradigma de programación reactiva, utilizando colas y eventos, al entorno de ejecución Cloud, y a las bases de datos no Sql, en este caso MongoDB."
+        }
+      ],
       "technologies": [
         {
-          "name": "Node.js",
-          "imageUrl": "/images/technologies/nodejs.png"
+          "name": "Vue.js",
+          "imageUrl": "/images/technologies/vue.png"
         },
         {
           "name": "PostgreSQL",
           "imageUrl": "/images/technologies/postgresql.png"
-        }
+        },
+        {
+          "name": "Spring Boot",
+          "imageUrl": "/images/technologies/springboot.png"
+        },
+        {
+          "name": "Java",
+          "imageUrl": "/images/technologies/java.png",
+          "aclaracion": "Java 11 y 17"
+        },
+        {
+          "name": "AWS",
+          "imageUrl": "/images/technologies/aws.webp"
+        },
+        {
+          "name": "MongoDB",
+          "imageUrl": "/images/technologies/mongodb.png"
+        },
+        {
+          "name": "JUnit",
+          "imageUrl": "/images/technologies/junit.png"
+        },
+        {
+          "name": "Kafka",
+          "imageUrl": "/images/technologies/kafka.svg"
+        },
+        {
+          "name": "Docker",
+          "imageUrl": "/images/technologies/docker.png"
+        },
+        {
+          "name": "Swagger",
+          "imageUrl": "/images/technologies/swagger.png"
+        },
+        {
+          "name": "Maven",
+          "imageUrl": "/images/technologies/mvn.png"
+        },
+        {
+          "name": "Git",
+          "imageUrl": "/images/technologies/git.png"
+        }  
       ],
       "responsibilities": [
-        "Desarrollo y mantenimiento de APIs RESTful",
-        "Diseño e implementación de arquitecturas escalables",
-        "Optimización de rendimiento de bases de datos",
-        "Mentoría de desarrolladores junior"
+        "Desarrollo full-stack en proyectos de software y hardware, trabajando en todas las capas del stack",
+        "Diseño, desarrollo y optimización de APIs RESTful con Spring Boot, JPA y Java 11 y 17",
+        "Implementación y mantenimiento de aplicaciones web con Vue.js",
+        "Integración de sensores y componentes hardware con el sistema operativo en dispositivos especializados",
+        "Optimización de rendimiento y adaptación de sistemas en base a requisitos técnicos",
+        "Experiencia en programación reactiva, trabajando con colas y eventos",
+        "Desarrollo en entornos Cloud (AWS)",
+        "Trabajo con arquitecturas avanzadas, incluyendo Spring State Machine, Aspect Oriented Programming y microservicios"
       ]
     },
     {
@@ -107,22 +234,66 @@
       "company": "VASS",
       "companyLogo": "/images/companies/vass.jpeg",
       "position": "Desarrollador Backend",
-      "description": "Descripción general del puesto y los objetivos principales",
-      "technologies": [
+      "description": [
         {
-          "name": "Node.js",
-          "imageUrl": "/images/technologies/nodejs.png"
-        },
-        {
-          "name": "PostgreSQL",
-          "imageUrl": "/images/technologies/postgresql.png"
+          "name": "Cliente: Telefonica - Gestión de Identidad",
+          "description": "Durante este tiempo estuve formado parte como personal externo del departamento de gestión de identidad de Telefónica. Durante este periodo tuve la oportunidad de entender cómo funciona una gran empresa y la importancia de los procesos. Este periodo empecé mi andadura como desarrollador backend, principalmente estuve enfocado al diseño y desarrollo de APIs RESTful con Spring Boot. En este periodo empecé a trabajar con bases de datos no relacionales, como LDAP, también estuve implementando integraciones con productos externos mediante SOAP y REST. Además, pese a que no me dediqué directamente a proyectos de frontend, sí que tuve que interactuar con ellos, como ejemplo, estuve desarrollando el login de la aplicación de Movistar para clientes, utilizando Angular JS."
         }
       ],
+      "technologies": [
+        {
+          "name": "Java",
+          "imageUrl": "/images/technologies/java.png",
+          "aclaracion": "Principalmente con Java 8 y 11"
+        },
+        {
+          "name": "Spring Boot",
+          "imageUrl": "/images/technologies/springboot.png"
+        },
+        {
+          "name": "LDAP",
+          "imageUrl": "/images/technologies/ldap.png"
+        },
+        {
+          "name": "SOAP",
+          "imageUrl": "/images/technologies/soap.webp"
+        },
+        {
+          "name": "REST",
+          "imageUrl": "/images/technologies/rest.png"
+        },
+        {
+          "name": "Angular",
+          "imageUrl": "/images/technologies/angular.png"
+        },
+        {
+          "name": "Oauth 2.0",
+          "imageUrl": "/images/technologies/oauth2.png"
+        },
+        {
+          "name": "JUnit",
+          "imageUrl": "/images/technologies/junit.png"
+        },
+        {
+          "name": "Swagger",
+          "imageUrl": "/images/technologies/swagger.png"
+        },
+        {
+          "name": "Maven",
+          "imageUrl": "/images/technologies/mvn.png"
+        },
+        {
+          "name": "Git",
+          "imageUrl": "/images/technologies/git.png"
+        }        
+      ],
       "responsibilities": [
-        "Desarrollo y mantenimiento de APIs RESTful",
-        "Diseño e implementación de arquitecturas escalables",
-        "Optimización de rendimiento de bases de datos",
-        "Mentoría de desarrolladores junior"
+        "Desarrollo backend con enfoque en APIs RESTful utilizando Spring Boot",
+        "Trabajo con bases de datos no relacionales, especialmente LDAP",
+        "Integración de sistemas externos mediante SOAP y REST",
+        "Interacción con proyectos frontend, incluyendo el desarrollo del login de la aplicación de Movistar para clientes con AngularJS",
+        "Experiencia en entornos corporativos de gran escala, comprendiendo la importancia de los procesos empresariales y la necesidad de lograr buena interacción entre equipos."
+
       ]
     },
     {
@@ -132,22 +303,41 @@
       "company": "Clever Global",
       "companyLogo": "/images/companies/clever_global.jpeg",
       "position": "Desarrollador Backend",
-      "description": "Descripción general del puesto y los objetivos principales",
+      "description": [
+        {
+          "name": "Desarrollo software sobre aplicación para gestión de proveedores y sus facturas",
+          "description": "Participé en el desarrollo de evolutivos sobre una aplicación ya existente que tenía como objetivo la gestión de proveedores y sus facturas. En este proyecto pude llegar a entender e interiorizar la importancia de una buena arquitectura de software y de los tests unitarios, así como un flujo de trabajo definido y homogeneizado. Esta experiencia, pese a que es la más reducida es una de las más importantes ya que me ha servido como referencia para poder entender cómo un proyecto bien diseñado, pese a que puede suponer mayor sobrecostes al inicio, a largo plazo es una inversión que se paga sola."
+        }
+      ],
       "technologies": [
         {
-          "name": "Node.js",
-          "imageUrl": "/images/technologies/nodejs.png"
+          "name": "Java",
+          "imageUrl": "/images/technologies/java.png",
+          "aclaracion": "Principalmente con Java SE 1.6"
         },
         {
           "name": "PostgreSQL",
           "imageUrl": "/images/technologies/postgresql.png"
-        }
+        },
+        {
+          "name": "Maven",
+          "imageUrl": "/images/technologies/mvn.png"
+        },
+        {
+          "name": "JUnit",
+          "imageUrl": "/images/technologies/junit.png"
+        },
+        {
+          "name": "Git",
+          "imageUrl": "/images/technologies/git.png"
+        } 
       ],
       "responsibilities": [
-        "Desarrollo y mantenimiento de APIs RESTful",
-        "Diseño e implementación de arquitecturas escalables",
-        "Optimización de rendimiento de bases de datos",
-        "Mentoría de desarrolladores junior"
+        "Análisis del impacto de una buena planificación y diseño del software, comprendiendo su valor a largo plazo en términos de mantenimiento y escalabilidad",
+        "Desarrollo de evolutivos sobre una aplicación existente enfocada en la gestión de proveedores y facturas",
+        "Comprensión e implementación de principios de arquitectura de software, destacando su importancia en la sostenibilidad del proyecto",
+        "Aplicación y valoración de tests unitarios para garantizar calidad y estabilidad en el código",
+        "Adaptación a un flujo de trabajo definido y homogéneo, lo que facilita la colaboración en equipo"
       ]
     },
     {

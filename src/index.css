@@ -440,9 +440,8 @@ p {
 .technologies-container {
   position: relative;
   width: 100%;
-  height: 600px;
-  background: var(--card-background);
-  border-radius: 20px;
+  height: 100vh;
+  
   padding: 20px;
   margin-top: 10px;
   overflow: hidden;
@@ -453,9 +452,11 @@ p {
 .technologies-chart {
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  background-color: var(--background-color);
+  border-radius: 12px;
+  padding: 2rem;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); */
+  /*border: 1px solid var(--border-color);*/
 }
 
 .technologies-container .section-title {
@@ -472,12 +473,16 @@ p {
 }
 
 .technologies-chart text {
-  font-family: var(--font-family);
-  font-size: 12px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  fill: var(--text-color);
   pointer-events: none;
 }
 
 .technologies-chart line {
+  stroke: var(--border-color);
+  stroke-width: 1;
+  opacity: 0.3;
   pointer-events: none;
 }
 
@@ -486,7 +491,8 @@ p {
 }
 
 .technologies-chart image {
-  transition: transform 0.3s ease;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
 }
 
 .technologies-chart image:hover {
