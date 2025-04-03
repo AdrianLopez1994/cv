@@ -5,7 +5,7 @@ const Header = () => {
     <div className="header-container">
       <div className="header-image">
         <img 
-          src="/public/images/web/header.jpeg" 
+          src="/images/web/header.jpeg" 
           alt="Adrián López" 
           className="profile-image"
         />

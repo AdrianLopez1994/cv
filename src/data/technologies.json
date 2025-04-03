@@ -3,7 +3,7 @@
   {
     "name": "JavaScript",
     "image": "/images/technologies/js.png",
-    "years": 1
+    "years": 2
   },
   {
     "name": "Node.js",
@@ -18,7 +18,7 @@
   {
     "name": "Vue.js",
     "image": "/images/technologies/vue.png",
-    "years": 1
+    "years": 2
   },
   {
     "name": "TypeScript",
@@ -28,12 +28,12 @@
   {
     "name": "MongoDB",
     "image": "/images/technologies/mongodb.png",
-    "years": 1
+    "years": 3
   },
   {
     "name": "PostgreSQL",
     "image": "/images/technologies/postgresql.png",
-    "years": 1
+    "years": 4
   },
   {
     "name": "D3.js",
@@ -43,72 +43,72 @@
   {
     "name": "Java",
     "image": "/images/technologies/java.png",
-    "years": 1
+    "years": 6
   },
   {
     "name": "Spring Boot",
     "image": "/images/technologies/springboot.png",
-    "years": 1
+    "years": 5
   },
   {
     "name": "AWS",
     "image": "/images/technologies/aws.webp",
-    "years": 1
+    "years": 3
   },
   {
     "name": "JUnit",
     "image": "/images/technologies/junit.png",
-    "years": 1
+    "years": 4
   },
   {
     "name": "Kafka",
     "image": "/images/technologies/kafka.svg",
-    "years": 1
+    "years": 2
   },
   {
     "name": "Docker",
     "image": "/images/technologies/docker.png",
-    "years": 1
+    "years": 4
   },
   {
     "name": "Swagger",
     "image": "/images/technologies/swagger.png",
-    "years": 1
+    "years": 3
   },
   {
     "name": "Maven",
     "image": "/images/technologies/mvn.png",
-    "years": 1
+    "years": 4
   },
   {
     "name": "Git",
     "image": "/images/technologies/git.png",
-    "years": 1
+    "years": 6
   },
   {
     "name": "LDAP",
     "image": "/images/technologies/ldap.png",
-    "years": 1
+    "years": 2
   },
   {
     "name": "SOAP",
     "image": "/images/technologies/soap.webp",
-    "years": 1
+    "years": 2
   },
   {
     "name": "REST",
     "image": "/images/technologies/rest.png",
-    "years": 1
+    "years": 5
   },
   {
     "name": "Angular",
     "image": "/images/technologies/angular.png",
-    "years": 1
+    "years": 2
   },
   {
     "name": "OAuth 2.0",
     "image": "/images/technologies/oauth2.png",
-    "years": 1
+    "years": 2
   },
   {
     "name": "JavaFX",
@@ -123,17 +123,17 @@
   {
     "name": "SQL",
     "image": "/images/technologies/sql.png",
-    "years": 1
+    "years": 4
   },
   {
     "name": "HTML",
     "image": "/images/technologies/html.png",
-    "years": 1
+    "years": 2
   },
   {
     "name": "CSS",
     "image": "/images/technologies/css.jpeg",
-    "years": 1
+    "years": 2
   },
   {
     "name": "jQuery",
