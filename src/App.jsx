@@ -3,9 +3,11 @@ import Section from './components/Section';
 import ExperienceSection from './components/ExperienceSection';
 import Header from './components/Header';
 import TechnologiesSection from './components/TechnologiesSection';
+import ProjectsSection from './components/ProjectsSection';
 import ContactSection from './components/ContactSection';
 import experiences from './data/experiences.json';
 import technologies from './data/technologies.json';
+import projects from './data/projects.json';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -30,19 +32,21 @@ function App() {
 
   return (
     <div className="app">
-      <main className="main-content">
-        <Section className="hero-section">
-          <Header />
-        </Section>
+      <Section className="hero-section">
+        <Header />
+      </Section>
 
-        <ExperienceSection experiences={experiences.experiences} />
+      <ExperienceSection experiences={experiences.experiences} />
 
-        <Section className="skills-section" title="Habilidades Técnicas">
-          <TechnologiesSection experiences={experiences.experiences} technologies={technologies.technologies} />
-        </Section>
+      <Section className="skills-section" title="Habilidades Técnicas">
+        <TechnologiesSection experiences={experiences.experiences} technologies={technologies.technologies} />
+      </Section>
 
-        <ContactSection />
-      </main>
+      <Section className="projects-section" title="Últimos proyectos Personales">
+        <ProjectsSection projects={projects.projects} />
+      </Section>
+
+      <ContactSection />
     </div>
   );
 }

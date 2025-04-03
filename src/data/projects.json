@@ -1,0 +1,47 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "CherryPeach",
+      "description": "CherryPeach es una aplicación de networking social que permite a los usuarios conectarse con personas cercanas en tiempo real. Funciona sin internet ni servidores, utilizando la proximidad física para crear interacciones sociales directas y seguras, manteniendo la privacidad de los usuarios al no almacenar datos personales.",
+      "technologies": [
+      ],
+      "features": [
+        "Conexión social basada en proximidad física",
+        "Funcionamiento sin internet ni servidores",
+        "Interacciones sociales directas y seguras",
+        "Optimización de consumo de energía",
+        "Costes operativos bajos"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Web de deducciones para la Renta",
+      "description": "Desarrollo de una web para que el usuario pueda calcular sus deducciones para la renta en base a un formulario que el usuario llena con sus datos personales.",
+      "technologies": [
+      ],
+      "features": [
+        "Uso de la IA para análisis intensivo de documentación",
+        "Uso de Python para scraping de documentos",
+        "Diseño de la web basado en el cliente para reduir los costes operativos del producto",
+        "Uso de la IA para el diseño y desarrollo de la interfaz web",
+        "Uso de PHP para la implementación de los algoritmos de filtrado y selección en la parte del servidor"
+      ],
+      "demoUrl": "https://deduccionesrenta.com"
+    },
+    {
+      "id": 3,
+      "name": "Web para Currículum Vitae",
+      "description": "Diseño y desarrollo de esta misma web para demostrar el potencial de la IA desde el punto de vista de optimización de equipos de desarrollo. Este proyecto sirve como ejemplo de cómo a través de la IA un desarrollador especializado en un campo puede ampliar sus conocimientos y habilidades para ofrecer un producto de mayor calidad y ser más polivalente.",
+      "technologies": [
+        
+      ],
+      "features": [
+        "Uso de la IA para el diseño y desarrollo de la interfaz web",
+        "Uso de la IA para la optimización de la web para el usuario"
+      ],
+      "githubUrl": "https://github.com/AdrianLopez1994/cv",
+      "demoUrl": "https://adrianlopezpisa.com"
+    }
+  ]
+} 
