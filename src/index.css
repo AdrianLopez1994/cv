@@ -617,9 +617,21 @@ p {
 
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 .project-card {
@@ -735,10 +747,6 @@ p {
 }
 
 @media (max-width: 768px) {
-  .projects-container {
-    grid-template-columns: 1fr;
-  }
-
   .project-card {
     padding: 1.5rem;
   }
