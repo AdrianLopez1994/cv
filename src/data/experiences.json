@@ -1,55 +1,6 @@
 {
   "experiences": [
     {
-      "id": 1,
-      "company": "Caixabank Tech",
-      "position": "Desarrollador Senior Backend",
-      "startDate": "2024-12",
-      "endDate": "Presente",
-      "description": [
-        {
-          "name": "Sistema de Gestión de facturas",
-          "description": ""
-        }
-      ],
-      "technologies": [
-        {
-          "name": "Java",
-          "image": "/images/technologies/java.png",
-          "aclaracion": "Principalmente con Java 11"
-        },
-        {
-          "name": "Spring Boot",
-          "image": "/images/technologies/springboot.png"
-        },
-        {
-          "name": "PostgreSQL",
-          "image": "/images/technologies/postgresql.png",
-          "aclaracion": "Principalmente con TypeScript"
-        },
-        {
-          "name": "Docker",
-          "image": "/images/technologies/docker.png"
-        },
-        {
-          "name": "Oracle",
-          "image": "/images/technologies/oracle.png"
-        },
-        {
-          "name": "Git",
-          "image": "/images/technologies/git.png"
-        },
-        {
-          "name": "Maven",
-          "image": "/images/technologies/mvn.png"
-        }
-      ],
-      "responsibilities": [
-        
-      ],
-      "companyLogo": "/images/companies/cabktech.jpeg"
-    },
-    {
       "id": 2,
       "company": "OpenBank",
       "position": "Desarrollador Backend Senior",
