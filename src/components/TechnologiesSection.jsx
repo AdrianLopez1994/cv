@@ -2,12 +2,13 @@ import { motion } from 'framer-motion';
 import { useRef, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import * as d3 from 'd3';
+import technologies from '../data/technologies.json';
 
-const TechnologiesSection = ({ experiences, technologies }) => {
+const TechnologiesSection = () => {
   const svgRef = useRef(null);
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-    triggerOnce: true
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1
   });
 
   // Paleta de colores profesional
@@ -35,69 +36,87 @@ const TechnologiesSection = ({ experiences, technologies }) => {
   ];
 
   useEffect(() => {
-    if (!inView || !svgRef.current || !technologies || !experiences) return;
+    if (!inView || !svgRef.current) return;
 
-    // Limpiar el SVG
-    d3.select(svgRef.current).selectAll("*").remove();
+    const svg = d3.select(svgRef.current);
+    svg.selectAll("*").remove();
+
+    const width = svgRef.current.clientWidth;
+    const height = svgRef.current.clientHeight;
+    const margin = { top: 40, right: 30, bottom: 60, left: 60 };
+    const isMobile = width < 768;
 
     // Ordenar tecnologías por años de experiencia
-    const sortedTechs = [...technologies].sort((a, b) => b.years - a.years);
+    const sortedData = [...technologies.technologies].sort((a, b) => b.years - a.years);
 
-    // Configurar dimensiones
-    const margin = { top: 40, right: 30, bottom: 60, left: 60 };
-    const width = 800 - margin.left - margin.right;
-    const height = 400 - margin.top - margin.bottom;
+    // Crear escalas
+    const xScale = isMobile
+      ? d3.scaleLinear()
+          .domain([0, d3.max(sortedData, d => d.years)])
+          .range([margin.left, width - margin.right])
+          .nice() // Asegura que la escala termine en números redondos
+      : d3.scaleBand()
+          .domain(sortedData.map(d => d.name))
+          .range([margin.left, width - margin.right])
+          .padding(0.3);
 
-    // Crear el SVG
-    const svg = d3.select(svgRef.current)
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-      .attr("transform", `translate(${margin.left},${margin.top})`);
+    const yScale = isMobile
+      ? d3.scaleBand()
+          .domain(sortedData.map(d => d.name))
+          .range([margin.top, height - margin.bottom])
+          .padding(0.3)
+      : d3.scaleLinear()
+          .domain([0, d3.max(sortedData, d => d.years) * 1.1])
+          .range([height - margin.bottom, margin.top]);
 
-    // Escalas
-    const x = d3.scaleBand()
-      .range([0, width])
-      .domain(sortedTechs.map(d => d.name))
-      .padding(0.2);
-
-    const y = d3.scaleLinear()
-      .range([height, 0])
-      .domain([0, d3.max(sortedTechs, d => d.years) * 1.1]);
+    // Crear ejes
+    const xAxis = isMobile
+      ? d3.axisBottom(xScale)
+          .ticks(Math.min(5, d3.max(sortedData, d => d.years) + 1)) // Limitar el número de marcas en móvil
+      : d3.axisBottom(xScale);
+    
+    const yAxis = isMobile
+      ? d3.axisLeft(yScale)
+      : d3.axisLeft(yScale).ticks(5);
 
     // Añadir ejes
     svg.append("g")
-      .attr("transform", `translate(0,${height})`)
-      .call(d3.axisBottom(x))
+      .attr("transform", `translate(0,${isMobile ? height - margin.bottom : height - margin.bottom})`)
+      .call(xAxis)
       .selectAll("text")
-      .attr("transform", "rotate(-45)")
       .style("text-anchor", "end")
+      .attr("dx", "-.8em")
+      .attr("dy", ".15em")
+      .attr("transform", "rotate(-45)")
       .style("font-size", "12px");
 
     svg.append("g")
-      .call(d3.axisLeft(y).ticks(5))
+      .attr("transform", `translate(${margin.left},0)`)
+      .call(yAxis)
       .style("font-size", "12px");
 
     // Añadir líneas de cuadrícula
-    svg.append("g")
-      .attr("class", "grid")
-      .call(d3.axisLeft(y)
-        .ticks(5)
-        .tickSize(-width)
-        .tickFormat("")
-      )
-      .style("stroke-dasharray", "3,3")
-      .style("opacity", 0.2);
+    if (!isMobile) {
+      svg.append("g")
+        .attr("class", "grid")
+        .call(d3.axisLeft(yScale)
+          .ticks(5)
+          .tickSize(-width)
+          .tickFormat("")
+        )
+        .style("stroke-dasharray", "3,3")
+        .style("opacity", 0.2);
+    }
 
     // Añadir barras
     svg.selectAll("rect")
-      .data(sortedTechs)
+      .data(sortedData)
       .enter()
       .append("rect")
-      .attr("x", d => x(d.name))
-      .attr("y", d => y(d.years))
-      .attr("width", x.bandwidth())
-      .attr("height", d => height - y(d.years))
+      .attr("x", d => isMobile ? margin.left : xScale(d.name))
+      .attr("y", d => isMobile ? yScale(d.name) : yScale(d.years))
+      .attr("width", d => isMobile ? xScale(d.years) - margin.left : xScale.bandwidth())
+      .attr("height", d => isMobile ? yScale.bandwidth() : height - margin.bottom - yScale(d.years))
       .attr("fill", (d, i) => colorPalette[i % colorPalette.length])
       .attr("rx", 4)
       .style("opacity", 0.8)
@@ -106,26 +125,26 @@ const TechnologiesSection = ({ experiences, technologies }) => {
           .style("opacity", 1)
           .transition()
           .duration(200)
-          .attr("y", y(d.years) - 5)
-          .attr("height", height - y(d.years) + 5);
+          .attr("y", isMobile ? yScale(d.name) : yScale(d.years) - 5)
+          .attr("height", isMobile ? yScale.bandwidth() + 5 : height - margin.bottom - yScale(d.years) + 5);
       })
       .on("mouseout", function(event, d) {
         d3.select(this)
           .style("opacity", 0.8)
           .transition()
           .duration(200)
-          .attr("y", y(d.years))
-          .attr("height", height - y(d.years));
+          .attr("y", isMobile ? yScale(d.name) : yScale(d.years))
+          .attr("height", isMobile ? yScale.bandwidth() : height - margin.bottom - yScale(d.years));
       });
 
     // Añadir tooltips
     svg.selectAll(".tooltip")
-      .data(sortedTechs)
+      .data(sortedData)
       .enter()
       .append("title")
       .text(d => `${d.name}: ${d.years} años de experiencia`);
 
-  }, [inView, technologies, experiences]);
+  }, [inView]);
 
   return (
     <section id="technologies" className="technologies-section">
@@ -134,11 +153,11 @@ const TechnologiesSection = ({ experiences, technologies }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
+          className="section-title"
         >
-
         </motion.h2>
         <div ref={ref} className="technologies-container">
-          <svg ref={svgRef}></svg>
+          <svg ref={svgRef} className="technologies-graph"></svg>
         </div>
       </div>
     </section>

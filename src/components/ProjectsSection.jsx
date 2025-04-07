@@ -9,11 +9,10 @@ const ProjectsSection = () => {
   });
 
   return (
-    <div className="projects-container">
+    <div className="projects-container" ref={ref}>
       {projects.projects.map((project, index) => (
         <motion.div
           key={project.id}
-          ref={ref}
           className="project-card"
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
