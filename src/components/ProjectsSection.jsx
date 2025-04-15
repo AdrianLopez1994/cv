@@ -47,7 +47,7 @@ const ProjectsSection = () => {
           </div>
           <p className="project-description">{project.description}</p>
           <div className="project-features">
-            <h4>Características</h4>
+            <h4>Characteristics</h4>
             <ul>
               {project.features.map((feature, i) => (
                 <li key={i}>{feature}</li>

@@ -38,11 +38,11 @@ function App() {
 
       <ExperienceSection experiences={experiences.experiences} />
 
-      <Section className="skills-section" title="Habilidades Técnicas">
+      <Section className="skills-section" title="Tech Habilities">
         <TechnologiesSection experiences={experiences.experiences} technologies={technologies.technologies} />
       </Section>
 
-      <Section className="projects-section" title="Últimos proyectos Personales">
+      <Section className="projects-section" title="Latest Personal Projects">
         <ProjectsSection projects={projects.projects} />
       </Section>
 

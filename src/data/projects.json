@@ -3,42 +3,42 @@
     {
       "id": 1,
       "name": "CherryPeach",
-      "description": "CherryPeach es una aplicación de networking social que permite a los usuarios conectarse con personas cercanas en tiempo real. Funciona sin internet ni servidores, utilizando la proximidad física para crear interacciones sociales directas y seguras, manteniendo la privacidad de los usuarios al no almacenar datos personales.",
+      "description": "CherryPeach is a social networking application that allows users to connect with nearby people in real-time. It works without internet or servers, using physical proximity to create direct and secure social interactions, maintaining user privacy by not storing personal data.",
       "technologies": [
       ],
       "features": [
-        "Conexión social basada en proximidad física",
-        "Funcionamiento sin internet ni servidores",
-        "Interacciones sociales directas y seguras",
-        "Optimización de consumo de energía",
-        "Costes operativos bajos"
+        "Social connection based on physical proximity",
+        "Operation without internet or servers",
+        "Direct and secure social interactions",
+        "Energy consumption optimization",
+        "Low operational costs"
       ]
     },
     {
       "id": 2,
-      "name": "Web de deducciones para la Renta",
-      "description": "Desarrollo de una web para que el usuario pueda calcular sus deducciones para la renta en base a un formulario que el usuario llena con sus datos personales.",
+      "name": "Income Tax Deductions Web",
+      "description": "Development of a web application that allows users to calculate their income tax deductions based on a form filled with their personal data.",
       "technologies": [
       ],
       "features": [
-        "Uso de la IA para análisis intensivo de documentación",
-        "Uso de Python para scraping de documentos",
-        "Diseño de la web basado en el cliente para reduir los costes operativos del producto",
-        "Uso de la IA para el diseño y desarrollo de la interfaz web",
-        "Uso de PHP para la implementación de los algoritmos de filtrado y selección en la parte del servidor"
+        "Use of AI for intensive documentation analysis",
+        "Use of Python for document scraping",
+        "Client-based web design to reduce product operational costs",
+        "Use of AI for web interface design and development",
+        "Use of PHP for server-side filtering and selection algorithms implementation"
       ],
       "demoUrl": "https://deduccionesrenta.com"
     },
     {
       "id": 3,
-      "name": "Web para Currículum Vitae",
-      "description": "Diseño y desarrollo de esta misma web para demostrar el potencial de la IA desde el punto de vista de optimización de equipos de desarrollo. Este proyecto sirve como ejemplo de cómo a través de la IA un desarrollador especializado en un campo puede ampliar sus conocimientos y habilidades para ofrecer un producto de mayor calidad y ser más polivalente.",
+      "name": "Curriculum Vitae Web",
+      "description": "Design and development of this same website to demonstrate the potential of AI from the perspective of development team optimization. This project serves as an example of how, through AI, a developer specialized in one field can expand their knowledge and skills to offer a higher quality product and be more versatile.",
       "technologies": [
         
       ],
       "features": [
-        "Uso de la IA para el diseño y desarrollo de la interfaz web",
-        "Uso de la IA para la optimización de la web para el usuario"
+        "Use of AI for web interface design and development",
+        "Use of AI for web optimization for the user"
       ],
       "githubUrl": "https://github.com/AdrianLopez1994/cv",
       "demoUrl": "https://adrianlopezpisa.com"

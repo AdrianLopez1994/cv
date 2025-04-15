@@ -51,7 +51,7 @@ const ExperienceCard = ({ experience }) => {
           </div>
         </div>
         <div className="experience-dates">
-          {experience.dates || `${experience.startDate} - ${experience.endDate}`}
+          <strong>{experience.dates || `${experience.startDate} - ${experience.endDate}`}</strong>
         </div>
       </div>
 
@@ -59,7 +59,7 @@ const ExperienceCard = ({ experience }) => {
 
       {experience.technologies && experience.technologies.length > 0 && (
         <div className="technologies">
-          <h4>Tecnologías</h4>
+          <h4>Tecnologies</h4>
           <div className="tech-stack">
             {experience.technologies.map((tech, index) => (
               <div key={index} className="tech-item">
@@ -80,7 +80,7 @@ const ExperienceCard = ({ experience }) => {
 
       {experience.responsibilities && experience.responsibilities.length > 0 && (
         <div className="responsibilities">
-          <h4>Responsabilidades</h4>
+          <h4>Responsabilities</h4>
           <ul>
             {experience.responsibilities.map((responsibility, index) => (
               <li key={index}>{responsibility}</li>
